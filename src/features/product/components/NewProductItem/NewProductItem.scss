@@ -1,0 +1,137 @@
+$tablet-width: 768px;
+$medium-width: 991px;
+$desktop-width: 1024px;
+$small-width: 501px;
+
+@mixin xs {
+    @media (max-width: #{$small-width - 1px}) {
+        @content;
+    }
+}
+@mixin small {
+    @media (min-width: #{$small-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$medium-width - 1px}) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (min-width: #{$medium-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+.new-product-item {
+    position: relative;
+    overflow: hidden;
+    & > a:hover {
+        cursor: pointer;
+        transition: all 0.25 ease-in-out 0;
+        -ms-transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+        transform: translateY(-10px);
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        @include tablet {
+            // width: 50px;
+            height: 95%;
+        }
+        @include small {
+            // width: 50px;
+            height: 85%;
+        }
+        @include xs {
+            // width: 50px;
+            height: 80%;
+        }
+    }
+    &__sale {
+        color: white;
+        font-size: 16x;
+        @include tablet {
+            font-size: 14px;
+        }
+        @include small {
+            font-size: 14px;
+        }
+        @include xs {
+            font-size: 14px;
+        }
+        text-align: center;
+        display: block;
+        background-color: orange;
+        width: 120px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 15px;
+        right: -35px;
+    }
+}
+
+.pink {
+    background-color: deeppink !important;
+}
+
+.card {
+    width: 100%;
+    height: 97%;
+    @include tablet() {
+        width: 100%;
+        height: 95%;
+    }
+    @include small() {
+        width: 95%;
+        height: 94%;
+    }
+    @include xs() {
+        width: 90%;
+        height: 93%;
+    }
+}
+.card-title {
+    font-size: 16px;
+    @include tablet {
+        font-size: 14px;
+    }
+    @include small {
+        font-size: 12px;
+    }
+    @include xs {
+        font-size: 12px;
+    }
+}
+.card-text {
+    font-size: 14px;
+    @include tablet {
+        font-size: 12px;
+    }
+    @include small {
+        font-size: 10px;
+    }
+    @include xs {
+        font-size: 10px;
+    }
+}
+.button {
+    font-size: 14px !important;
+    @include tablet {
+        font-size: 12px !important;
+    }
+    @include small {
+        font-size: 10px !important;
+    }
+    @include xs {
+        font-size: 10px !important;
+    }
+}

@@ -1,0 +1,209 @@
+$tablet-width: 768px;
+$medium-width: 991px;
+$desktop-width: 1024px;
+$small-width: 501px;
+
+@mixin xs {
+    @media (max-width: #{$small-width - 1px}) {
+        @content;
+    }
+}
+@mixin small {
+    @media (min-width: #{$small-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$medium-width - 1px}) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (min-width: #{$medium-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+.product-cart {
+    background-color: #ffffff;
+    min-height: 100%;
+    clear: both;
+    &__section-arrivals {
+        padding: 50px 0 50px;
+        color: inherit;
+    }
+    &__arrivals-heading {
+        background-color: #ffebee;
+    }
+    &__arrivals-heading h2 {
+        padding: 30px 0 35px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+        @include tablet {
+            font-size: 1.5rem;
+        }
+        @include small {
+            font-size: 1rem;
+        }
+        @include xs {
+            font-size: 11px;
+        }
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__img {
+        width: auto;
+        height: 150px;
+        @include tablet {
+            height: 120px;
+        }
+        @include small {
+            height: 100px;
+        }
+        @include xs {
+            height: 80px;
+        }
+    }
+
+    &__table-header {
+        background-color: burlywood;
+        font-size: 16px;
+        @include tablet {
+            font-size: 14px;
+        }
+        @include small {
+            font-size: 12px;
+        }
+        @include xs {
+            font-size: 10px;
+        }
+    }
+    &__table-body {
+        font-size: 14px;
+        @include tablet {
+            font-size: 12px;
+        }
+        @include small {
+            font-size: 10px;
+        }
+        @include xs {
+            font-size: 8px;
+        }
+        &--footer {
+            font-size: 20px;
+            font-weight: 600;
+            @include tablet {
+                font-size: 12px;
+            }
+            @include small {
+                font-size: 12px;
+            }
+            @include xs {
+                font-size: 12px;
+            }
+        }
+        &--footer-btn {
+            @include tablet {
+                font-size: 12px !important;
+            }
+            @include small {
+                font-size: 10px !important;
+            }
+            @include xs {
+                font-size: 8px !important;
+            }
+        }
+    }
+    &__btn-quantity {
+        background-color: hotpink !important;
+        color: white !important;
+        @include tablet {
+            font-size: 12px !important;
+        }
+        @include small {
+            font-size: 10px !important;
+        }
+        @include xs {
+            font-size: 8px !important;
+        }
+    }
+    &__btn-remove {
+        @include tablet {
+            font-size: 12px !important;
+        }
+        @include small {
+            font-size: 10px !important;
+        }
+        @include xs {
+            font-size: 8px !important;
+        }
+    }
+    &__order-heading {
+        font-size: 14px !important;
+        @include tablet {
+            font-size: 12px !important;
+        }
+        @include small {
+            font-size: 12px !important;
+        }
+        @include xs {
+            font-size: 12px !important;
+        }
+    }
+    &__order-table-header {
+        background-color: burlywood;
+        font-size: 14px;
+        @include tablet {
+            font-size: 12px;
+        }
+        @include small {
+            font-size: 10px;
+        }
+        @include xs {
+            font-size: 10px;
+        }
+    }
+    &__order-table-body {
+        font-size: 12px;
+        @include tablet {
+            font-size: 10px;
+        }
+        @include small {
+            font-size: 8px;
+        }
+        @include xs {
+            font-size: 8px;
+        }
+        &--footer {
+            font-size: 16px;
+            font-weight: bold;
+            @include tablet {
+                font-size: 10px;
+            }
+            @include small {
+                font-size: 10px;
+            }
+            @include xs {
+                font-size: 10px;
+            }
+        }
+    }
+    &__btn-order {
+        font-size: 12px !important;
+        @include tablet {
+            font-size: 10px !important;
+        }
+        @include small {
+            font-size: 10px !important;
+        }
+        @include xs {
+            font-size: 10px !important;
+        }
+    }
+}

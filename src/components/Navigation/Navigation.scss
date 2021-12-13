@@ -1,0 +1,107 @@
+$tablet-width: 768px;
+$medium-width: 991px;
+$desktop-width: 1024px;
+$small-width: 501px;
+
+@mixin xs {
+    @media (max-width: #{$small-width - 1px}) {
+        @content;
+    }
+}
+@mixin small {
+    @media (min-width: #{$small-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$medium-width - 1px}) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (min-width: #{$medium-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+.shop-header {
+    font-size: 15px;
+    font-weight: 500;
+    @include tablet {
+        font-size: 12px;
+    }
+    @include small {
+        font-size: 12px;
+    }
+    @include xs {
+        font-size: 10px;
+    }
+    &__nav {
+        position: relative;
+        background-color: burlywood;
+        display: flex;
+        justify-content: space-around;
+
+        @include tablet {
+            display: flex;
+            justify-content: left;
+        }
+        @include small {
+            display: flex;
+            justify-content: left;
+        }
+        @include xs {
+            display: flex;
+            justify-content: left;
+        }
+    }
+    &__link,
+    &__dropdown {
+        transition: all 0.25s ease-in-out 0s;
+        margin: 0 20px 0 20px;
+        &--active {
+            color: #fff !important;
+        }
+        &:hover {
+            color: #fff !important;
+        }
+    }
+    &__dropdown {
+        margin: 0;
+        &:hover {
+            color: #000 !important;
+        }
+    }
+    &__img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+        -ms-interpolation-mode: bicubic;
+        -webkit-animation: smooth-image 1.2s;
+        -moz-animation: smooth-image 1.2s;
+        animation: smooth-image 1.2s;
+    }
+    &__button {
+        display: none !important;
+        @include small {
+            display: flex !important;
+        }
+        @include xs {
+            display: flex !important;
+        }
+    }
+    &__menu {
+        @include small {
+            display: none !important;
+        }
+        @include xs {
+            display: none !important;
+        }
+    }
+}
